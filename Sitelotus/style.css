@@ -1,0 +1,766 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0d0d12;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #16161e;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.profile-header {
+    display: flex;
+    padding: 30px;
+    background: linear-gradient(135deg, #1a1a24 0%, #0d0d12 100%);
+    border-bottom: 2px solid #b026ff;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    border: 2px solid #b026ff;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.4);
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-info h1 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.level {
+    background-color: #b026ff;
+    color: white;
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.bio {
+    font-style: italic;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 12px;
+    color: #888;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Cria uma barreira invisível entre o logo e o texto, impedindo sobreposições */
+    background-color: #1a1a24;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+/* O círculo perfeito do Logo da Lotüs */
+.badge-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%; /* Faz a caixa ficar redonda */
+    overflow: hidden; /* Tudo o que for quadrado e sair do círculo é invisível */
+    flex-shrink: 0; /* Impede o círculo de ser esmagado pelo texto */
+    box-shadow: 0 0 12px rgba(176, 38, 255, 0.6);
+}
+
+.badge-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher todo o círculo, cortando os cantos quadrados */
+}
+
+.badge-text strong {
+    display: block;
+    color: #b026ff;
+}
+
+/* Secções Comuns */
+section {
+    padding: 20px 30px;
+    border-bottom: 1px solid #2a2a35;
+}
+
+h2 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Inventário */
+.items-grid {
+    display: flex;
+    gap: 15px;
+}
+
+/* Inventário / Troféus com Efeito de Revelação */
+.items-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.item-slot {
+    position: relative; /* Mantém o texto preso dentro deste quadrado */
+    width: 100px;
+    height: 100px;
+    background-color: #1a1a24;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: 0.3s;
+    overflow: hidden; /* Corta qualquer coisa que saia dos limites */
+}
+
+/* Ajusta a imagem do Canva para preencher o quadrado perfeito */
+.item-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* O texto com as instruções da conquista (Escondido por defeito) */
+.trophy-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 0, 58, 0.9); /* Fundo roxo da Lotüs com 90% de opacidade */
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o rato (Hover) */
+.item-slot:hover {
+    border-color: #b026ff;
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.3);
+    cursor: pointer;
+    transform: scale(1.05); /* Pequeno zoom no troféu */
+}
+
+/* Revela o texto quando o rato passa por cima */
+.item-slot:hover .trophy-tooltip {
+    opacity: 1;
+}
+
+/* Atividade Recente */
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.activity-header span {
+    color: #888;
+    font-size: 14px;
+}
+
+.artist-card {
+    display: flex;
+    background-color: #1a1a24;
+    padding: 15px;
+    border-radius: 6px;
+    gap: 20px;
+    align-items: center;
+}
+
+.artist-cover img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+}
+
+.artist-details {
+    flex-grow: 1;
+}
+
+.artist-details h3 {
+    color: #b026ff;
+}
+
+.genre {
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
+.artist-stats {
+    text-align: right;
+    font-size: 14px;
+}
+
+.last-played {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Ranking Global do Artista */
+.global-ranking {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #161622 0%, #1a1a24 100%);
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Linha Néon lateral para dar destaque */
+.global-ranking::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #b026ff;
+    box-shadow: 0 0 10px #b026ff;
+}
+
+.ranking-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+/* O emblema com a posição do utilizador */
+.ranking-badge {
+    background-color: #b026ff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.5);
+    transform: rotate(-5deg); /* Dá um toque mais agressivo/dinâmico */
+}
+
+.ranking-details h4 {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ranking-details p {
+    color: #a0a0a0;
+    font-size: 12px;
+}
+
+.ranking-details strong {
+    color: #b026ff;
+}
+
+/* A barra que mostra a distância até ao Top 1 */
+.ranking-track {
+    margin-top: 10px;
+}
+
+.ranking-bar-bg {
+    width: 100%;
+    height: 8px;
+    background-color: #111;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.ranking-bar-fill {
+    height: 100%;
+    /* Um gradiente que fica mais intenso à medida que se aproxima do #1 */
+    background: linear-gradient(90deg, #461066 0%, #b026ff 100%);
+    border-radius: 4px;
+    box-shadow: 2px 0 10px #b026ff;
+}
+
+/* Os textos debaixo da barra */
+.ranking-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 10px;
+    color: #888;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ranking-labels span:nth-child(2) {
+    color: #a0a0a0; /* Dá destaque à mensagem do meio */
+}
+
+/* Álbuns Favoritos */
+.albums-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.album-slot {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.album-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem não fica esticada nem distorcida */
+}
+
+.album-slot:hover {
+    border-color: #b026ff;
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.3);
+    cursor: pointer;
+    transform: scale(1.05); /* Dá um pequeno efeito de zoom */
+}
+
+/* Barra de XP Interativa na Badge */
+.xp-container {
+    margin-top: 5px;
+    width: 150px; /* Define o tamanho da barra */
+}
+
+#xp-counter {
+    font-size: 11px;
+    color: #b026ff;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.xp-bar-bg {
+    width: 100%;
+    height: 6px;
+    background-color: #111;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.xp-bar-fill {
+    width: 0%; /* A barra começa vazia para a animação funcionar */
+    height: 100%;
+    background-color: #b026ff;
+    box-shadow: 0 0 8px #b026ff;
+    border-radius: 3px;
+    transition: width 1.5s ease-out; /* Controla a suavidade da barra a encher */
+}
+/* Carteira de Tokens - Base */
+.token-wallet {
+    position: relative; /* Necessário para posicionar o botão de minimizar */
+    padding: 15px 45px 15px 30px; /* Espaço extra na direita para o botão não sobrepor o texto */
+    background: linear-gradient(90deg, #16161e 0%, #1a1a24 100%);
+    border-bottom: 1px solid #2a2a35;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animação suave de altura */
+    height: 80px; /* Altura original */
+    overflow: hidden; /* Corta o conteúdo quando a caixa encolhe */
+}
+
+/* Estado Minimizado */
+.token-wallet.minimized {
+    height: 30px; /* Encolhe a secção */
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* O Conteúdo dentro da Carteira */
+.wallet-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.token-wallet.minimized .wallet-content {
+    opacity: 0; /* Torna o texto e a loja invisíveis quando minimizado */
+    pointer-events: none; /* Impede cliques no botão da loja quando está invisível */
+}
+
+/* Botão de Minimizar */
+.minimize-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%); /* Centra o botão verticalmente */
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 5px;
+}
+
+.minimize-btn:hover {
+    color: #b026ff;
+    transform: translateY(-50%) scale(1.2); /* Aumenta ligeiramente ao passar o rato */
+}
+
+.token-wallet.minimized .minimize-btn {
+    transform: translateY(-50%) rotate(180deg); /* Vira a seta para baixo quando fechado */
+}
+
+.wallet-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Ícone da Moeda (L-Token) */
+.wallet-icon {
+    width: 35px; /* Tamanho do ícone */
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wallet-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantém a proporção da moeda intacta */
+    /* Este filtro adiciona o brilho néon que se perdeu ao tirar o fundo: */
+    filter: drop-shadow(0 0 10px rgba(176, 38, 255, 0.8)); 
+}
+
+.wallet-balance h3 {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.token-amount {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(176, 38, 255, 0.4); /* O número tem um leve neon */
+}
+
+/* Botão da Loja */
+.shop-button {
+    background-color: transparent;
+    color: #b026ff;
+    border: 1px solid #b026ff;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.shop-button:hover {
+    background-color: #b026ff;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.5);
+    transform: translateY(-2px); /* O botão sobe ligeiramente quando passas o rato */
+}
+
+/* Missões da Malena */
+.missions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.timer {
+    font-size: 12px;
+    color: #ff4655; /* Cor de alerta para o tempo limite */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.missions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mission-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a24;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 15px;
+    transition: 0.3s ease;
+}
+
+.mission-card:hover {
+    border-color: #b026ff;
+    background-color: #1c1c28;
+    transform: translateX(5px); /* Desliza ligeiramente para a direita ao passar o rato */
+}
+
+.mission-info {
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+.mission-info h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.mission-info p {
+    color: #a0a0a0;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+/* Barra de Progresso da Missão */
+.mission-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: #888;
+}
+
+.mission-progress .progress-bar-bg {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #111;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mission-progress .progress-fill {
+    height: 100%;
+    background-color: #b026ff;
+    box-shadow: 0 0 8px #b026ff;
+}
+
+/* Recompensa e Botão */
+.mission-reward {
+    background-color: #232330;
+    border: 1px dashed #b026ff; /* Aspeto de cupão resgatável */
+    padding: 10px 15px;
+    border-radius: 4px;
+    color: #b026ff;
+    font-weight: bold;
+    font-size: 12px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.claim-btn {
+    background-color: #b026ff;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.claim-btn:hover {
+    background-color: #ffffff;
+    color: #b026ff;
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+}
+
+/* Lista de Amigos */
+.friends-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.online-count {
+    font-size: 12px;
+    color: #00ffaa; /* Verde néon para estado online */
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 255, 170, 0.4);
+}
+
+.friends-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.friend-card {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a24;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px 15px;
+    transition: 0.3s ease;
+}
+
+.friend-card:hover {
+    border-color: #b026ff;
+    background-color: #1c1c28;
+}
+
+/* Avatar e Ponto de Estado Online */
+.friend-avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.friend-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friend-avatar.online::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #00ffaa;
+    border: 2px solid #1a1a24; /* Cria um contorno escuro para separar o ponto da imagem */
+    border-radius: 50%;
+    box-shadow: 0 0 5px #00ffaa;
+}
+
+/* Estilo para Amigos Offline */
+.friend-card.offline {
+    opacity: 0.5;
+}
+
+.friend-card.offline:hover {
+    opacity: 1; /* Acende quando passas o rato por cima */
+}
+
+/* Detalhes de Texto */
+.friend-details {
+    flex-grow: 1;
+}
+
+.friend-details h4 {
+    color: #ffffff;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.friend-details p {
+    color: #a0a0a0;
+    font-size: 11px;
+}
+
+.friend-details p strong {
+    color: #b026ff;
+}
+
+/* Botão de Interação */
+.friend-action button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.friend-card:hover .friend-action button {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+/* --- Sistema de Drag and Drop --- */
+.draggable-section {
+    position: relative; /* Necessário para posicionar o puxador */
+    background-color: #16161e;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* O ícone de puxar no canto direito */
+.drag-handle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #555;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: grab; /* Muda o rato para uma mão aberta */
+    user-select: none;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.drag-handle:hover {
+    color: #b026ff;
+}
+
+.draggable-section:active .drag-handle {
+    cursor: grabbing; /* Mão fechada quando clica */
+}
+
+/* Efeito visual da caixa enquanto está a ser arrastada */
+.draggable-section.dragging {
+    opacity: 0.4;
+    border: 2px dashed #b026ff;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.2);
+    transform: scale(0.98); /* Encolhe ligeiramente */
+    z-index: 100;
+}
+/* Cria uma zona de segurança para o ícone de drag não bater no texto */
+.friends-header, .activity-header, .missions-header {
+    padding-right: 25px; 
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotüs - Perfil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho do Perfil -->
+        <header class="profile-header">
+            <div class="avatar-container">
+                <img src="imagens/fotoperfil.jpg" alt="Avatar Yelz" class="avatar">
+            </div>
+            <div class="profile-info">
+                <h1>Yelz <span class="level">Nível 12</span></h1>
+                <p class="bio">"Ea a minha consequência é carregar essa
+Paranoia por ter meu estilo de vida"</p>
+                <p class="location">🇵🇹 Portugal</p>
+            </div>
+            <div class="badge-container">
+                <div class="badge-icon">
+                    <img src="imagens/logo.png" alt="Logo Lotüs">
+                    </div>
+                    <div class="badge-text">
+                        <strong>Nivel 12</strong>
+                        <div class="xp-container">
+                            <span id="xp-counter">0 XP</span>
+                            <div class="xp-bar-bg">
+                                <div class="xp-bar-fill" id="xp-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </header>
+<section class="token-wallet" id="wallet-section">
+            <div class="wallet-content" id="wallet-content">
+                <div class="wallet-info">
+                    <div class="wallet-icon">
+    <img src="imagens/beatcoin.png" alt="Ícone L-Token">
+</div>
+                    <div class="wallet-balance">
+                        <h3>Carteira Lotüs</h3>
+                        <span class="token-amount">2.450 BT$</span>
+                    </div>
+                </div>
+                <button class="shop-button">Loja de Pontos</button>
+            </div>
+            
+            <!-- Botão de Minimizar -->
+            <button class="minimize-btn" id="minimize-btn" title="Minimizar Carteira">▲</button>
+        </section>
+
+<div id="profile-sections">
+
+
+
+
+
+
+        <!-- Missões da Malena -->
+        <section class="active-missions draggable-section" draggable="true">
+            <div class="drag-handle" title="Arrastar secção">⋮</div>
+            <div class="missions-header">
+                <h2>Missões</h2>
+                <span class="timer">⏳ Atualiza em 14h 22m</span>
+            </div>
+            
+            <div class="missions-grid">
+                <!-- Missão 1: Em Progresso -->
+                <div class="mission-card">
+                    <div class="mission-info">
+                        <h4>Foco no Underground</h4>
+                        <p>Ouve 3 faixas de artistas com menos de 1M de seguidores.</p>
+                        <div class="mission-progress">
+                            <div class="progress-bar-bg">
+                                <div class="progress-fill" style="width: 66%;"></div>
+                            </div>
+                            <span>2 / 3</span>
+                        </div>
+                    </div>
+                    <div class="mission-reward">
+                        <span>+150 XP</span>
+                    </div>
+                </div>
+
+                <!-- Missão 2: Concluída -->
+                <div class="mission-card">
+                    <div class="mission-info">
+                        <h4>Tem que respeitar</h4>
+                        <p>Partilha seu perfil no instagram</p>
+                        <button class="claim-btn">Reivindicar</button>
+                    </div>
+                    <div class="mission-reward">
+                        <span>+50 Beatcoin</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Amigos -->
+        <section class="friends-list draggable-section" draggable="true">
+                <div class="drag-handle" title="Arrastar secção">⋮</div>
+            <div class="friends-header">
+                <h2>Comunidade</h2>
+                <span class="online-count">2 Online</span>
+            </div>
+            
+            <div class="friends-grid">
+                <!-- Amigo 1 (Online e a ouvir música) -->
+                <div class="friend-card">
+                    <div class="friend-avatar online">
+                        <img src="imagens/amigo1.jpg" alt="Avatar Amigo 1">
+                    </div>
+                    <div class="friend-details">
+                        <h4>Vexy</h4>
+                        <p>A ouvir: <strong>Matuê - Conexões de Máfia</strong></p>
+                    </div>
+                    <div class="friend-action">
+                        <button title="Ouvir junto">🎧</button>
+                    </div>
+                </div>
+
+                <!-- Amigo 2 (Online) -->
+                <div class="friend-card">
+                    <div class="friend-avatar online">
+                        <img src="imagens/amigo2.jpg" alt="Avatar Amigo 2">
+                    </div>
+                    <div class="friend-details">
+                        <h4>Fabex</h4>
+                        <p>A ouvir: <strong>Terapia - Mc kevin</strong></p>
+                    </div>
+                    <div class="friend-action">
+                        <button title="Ouvir junto">🎧</button>
+                    </div>
+                </div>
+                
+                <!-- Amigo 3 (Offline) -->
+                <div class="friend-card offline">
+                    <div class="friend-avatar">
+                        <img src="imagens/amigo3.jpg" alt="Avatar Amigo 3">
+                    </div>
+                    <div class="friend-details">
+                        <h4>Puto</h4>
+                        <p>Última vez online há 2 horas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inventário / Recompensas -->
+        <section class="inventory-showcase draggable-section" draggable="true">
+                <div class="drag-handle" title="Arrastar secção">⋮</div>
+            <h2>Troféus</h2>
+            <div class="items-grid">
+                <!-- Troféu 1 -->
+                <div class="item-slot">
+                    <img src="imagens/trofeu1.png" alt="Troféu 1">
+                    <div class="trophy-tooltip">Ouviste 1.000 horas de Trap Nacional.</div>
+                </div>
+                
+                <!-- Troféu 2 -->
+                <div class="item-slot">
+                    <img src="imagens/trofeu2.png" alt="Troféu 2">
+                    <div class="trophy-tooltip">Adquiriste o passe Lotüs VIP.</div>
+                </div>
+                
+                <!-- Troféu 3 -->
+                <div class="item-slot">
+                    <img src="imagens/trofeu3.png" alt="Troféu 3">
+                    <div class="trophy-tooltip">Assististe a 5 eventos "AO VIVO".</div>
+                </div>
+                
+                <!-- Troféu 4 -->
+                <div class="item-slot">
+                    <img src="imagens/trofeu4.png" alt="Troféu 4">
+                    <div class="trophy-tooltip">Top 1 Global: Fã número um.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Albuns Favoritos -->
+        <section class="inventory-showcase draggable-section" draggable="true">
+                <div class="drag-handle" title="Arrastar secção">⋮</div>
+            <h2>Álbuns Favoritos</h2>
+            <div class="albums-grid">
+                <div class="album-slot"><img src="imagens/album1.jpg" alt="Álbum 1"></div>
+                <div class="album-slot"><img src="imagens/album2.jpg" alt="Álbum 2"></div>
+                <div class="album-slot"><img src="imagens/album3.jpg" alt="Álbum 3"></div>
+                <div class="album-slot"><img src="imagens/album4.jpg" alt="Álbum 4"></div>
+            </div>
+        </section>
+
+        <section class="inventory-showcase draggable-section" draggable="true">
+                <div class="drag-handle" title="Arrastar secção">⋮</div>
+            <h2>Minhas Playlists</h2>
+            <div class="albums-grid">
+                <div class="album-slot"><img src="imagens/mp1.jpg" alt="Álbum 1"></div>
+                <div class="album-slot"><img src="imagens/mp2.jpg" alt="Álbum 2"></div>
+                <div class="album-slot"><img src="imagens/mp3.jpg" alt="Álbum 3"></div>
+                <div class="album-slot"><img src="imagens/mp4.jpg" alt="Álbum 4"></div>
+            </div>
+        </section>
+
+        <!-- Atividade Recente -->
+        <section class="recent-activity draggable-section" draggable="true">
+                <div class="drag-handle" title="Arrastar secção">⋮</div>
+            <div class="activity-header">
+                <h2>Artista Favorito</h2>
+                <span>Matuê</span>
+            </div>
+            <div class="artist-card">
+                <div class="artist-cover">
+                    <img src="imagens/tue.jpg" alt="Artista">
+                </div>
+                <div class="artist-details">
+                    <h3>Matuê</h3>
+                    <p class="genre">Rap / Trap</p>
+                </div>
+                <div class="artist-stats">
+                    <p>1.221 horas registadas</p>
+                    <p class="last-played">Ouvido pela última vez em 24 de set.</p>
+                </div>
+            </div>
+           <!-- Ranking Global do Artista -->
+            <div class="global-ranking">
+                <div class="ranking-info">
+                    <div class="ranking-badge">#10</div>
+                    <div class="ranking-details">
+                        <h4>Fã de Elite</h4>
+                        <p>És a 10ª pessoa no mundo com mais horas ouvidas de <strong>Matuê</strong>.</p>
+                    </div>
+                </div>
+                <div class="ranking-track">
+                    <div class="ranking-bar-bg">
+                        <!-- A largura style="width: 90%" dita o quão perto estás do #1 -->
+                        <div class="ranking-bar-fill" style="width: 90%;"></div>
+                    </div>
+                    <div class="ranking-labels">
+                        <span>Top 100</span>
+                        <span>Faltam 12h para o Rei (#1)</span>
+                        <span>👑 #1</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
